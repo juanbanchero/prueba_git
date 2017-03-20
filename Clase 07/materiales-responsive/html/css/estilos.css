@@ -1,0 +1,160 @@
+*{
+  box-sizing: border-box;
+}
+
+body{
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  background-image: url(../images/bg-body.png);
+  background-attachment: fixed; /*para que la imagen no se desplace cuando hacemos scroll*/
+  }
+
+img{
+    width: 100%; /*esto es para que la imagen sea responsive, poner siempre*/
+}
+
+ul,ol{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.container{
+  width: 95%;
+  margin: auto;
+}
+
+.logo{
+  border-radius: 50%;
+  border: solid 1px #333;
+  display: block;
+  margin: 30px auto;
+  box-shadow: 0 0 5px #000000; /*le aplica una sombra a cualquier elemento menos al texto, recibe 4 parametros (sombra eje x, sombra eje y, difuminado,color de sombra)*/
+  max-width: 140px;
+}
+
+.toggle-nav{
+  background-color: #333;
+  display: block;
+  width: 45px;
+  text-align: center;
+  padding: 10px 0; /*esto es para hacer el icono cuadrado porque si le doy altura me va a quedar pegado a alguno de los lados*/
+  margin: 0 auto 20px;
+}
+
+.ion-navicon-round{
+  color: #fff;
+  font-size: 25px; /*esto es para darle un tamaño a el icono*/
+}
+
+.main-nav a{
+  display: block;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.5em;
+  border-bottom: solid 1px #ccc;/*esto separa cada parte de la barra de navegacion, una de la otra*/
+  border-top: solid 1px #000;/*esto es una tecnica para el menu para que quede lindo, una sutileza para la barra de navegacion*/
+  padding: 8px;
+}
+
+.main-nav ul{
+  display: none;
+}
+
+.banner{
+  display: none;
+}
+
+.product{
+  margin-bottom: 15px;
+}
+
+.product a{
+  display: inline-block;
+  background-color: #333;
+  color: #fff;
+  font-size: 1.2em;
+  padding: 0.6em;
+}
+
+.main-footer{
+  background-color: #f00;
+  border-radius: 20px 20px 0 0; /*el border radius me permite meter 4 paametros para cada esquina(borde arriba izquierda,borde arriba derecha, borde abajo derecha, borde abajo izquierda;)*/
+}
+
+.main-footer a{
+  display: block;
+  color: #fff;
+  padding: 0.6em;
+  text-align: center;
+  border-bottom: solid 1px #fff;
+}
+/*MEDIA QUERY PARA TABLETS*/
+@media (min-width:640px)
+{
+  .container{
+    width: 100%;  /*Esto es para devolverle el ancho normal a la pantalla*/
+  }
+  .toggle-nav{
+    display: none;
+  }
+  .main-nav ul
+  {
+    display: block !important; /**Para mostrar la lista que estaba oculta, el important es para darle mas peso
+    jerarquico y que no se me pise con el display:none**/
+    overflow: hidden;
+  }
+
+  .main-nav li{
+    float: left;
+    margin: 0  0.83%;
+    font-size: 0.6em;
+    text-align: center;
+    width: 15%; /*Calculo que tengo anotado en la hoja, es el ancho de los botones*/
+  }
+
+  .banner{
+    display: block;
+    margin: 30px 0.83%; /*el 0.83 es el margen entre imagen e imagen calculo en la hoja*/
+  }
+  .product{
+  float: left;
+  width: 48.34%;
+  margin: 0 0.83%;
+  margin-bottom: 30px;
+  }
+  .vip-products{
+    overflow: hidden; /*Esto es para esconcder el footer que se sube y arreglas el problema*/
+    margin: 30px 0;
+  }
+}
+
+@media(min-width:960px)
+{
+  .product{
+  width: 31.67333%;
+}
+.main-footer{
+  padding: 30px 0;
+}
+.main-footer li{
+  display: inline-block;
+}
+.main-footer ul{
+  text-align: center;
+}
+.main-footer a{
+  border: none;
+  border-right: solid 1px rgba(255,255,255,0.8);
+}
+.main-footer li:last-child a{
+  border-right: none;
+}
+}
